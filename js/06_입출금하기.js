@@ -49,18 +49,33 @@ alert(" 출금 기능 수행");
 function deposit(){
     //입력된 금액을 얻어와 number 타입으로 변환 후 balance 변수에 누적
     balance += Number(amount.value);
-    let result;
-    switch( Number(amount.value)){
-        case 1: output = v1 +; break
-    }
-    document.getElementById("amount") = result; 
+    output.innerText = balance; // 화면에 누적된 잔액 출력
+    amount.value = ""; //입력하려고 작성한 금액 삭제
 }
 /**출금 */
 function withdrawal(){
-    const v2 = Number(amount.value);
-    let result2;
-    switch( Number(amount.value)){
-        case 2: output = v2 - output; break
-    }
-    document.getElementById("amount") = result2; 
+   // 출금 버튼 클릭 시 prompt를 이용해 비밀번호를 입력 받기
+   const pw = prompt("비밀번호를 입력하세요");
+
+   if(pw === null){ //prompt에서 취소 클릭
+    alert("비밀번호 입력 취소");
+    return;
+
+   }
+   
+   if(pw !== password){
+    alert("비밀번호가 일치하지 않습니다");
+
+   }
+   //출금
+   const val = Number(amount.value); //입력 받은 금액number타입 변환
+   //출금할 금액이 잔액 보다 큰 경우
+   if(val > balance){
+    alert("출금 금액이 잔액보다 클 수 없습니다.");
+    return;
+   }
+   balance -= val; //balance를 val만큼 차감
+
+   output.innerText = balance; // 화면에 차감된 금액 출력
+   amount.value = ""; //입력된 금액 삭제
 }
