@@ -1,5 +1,5 @@
 //* 변수 선언 값을 저장하기 위한 공간 생성
-var nnumber 1 -10=;();
+var number 1 -10=:();
 
 function varcheck(){
     var menu =" 제육볶음";
@@ -118,8 +118,87 @@ function scopeTest2() //함수 선언
     console.log("if 전 : ", name);
     if(temp === 123) {
 
-        const name ="김미영";
+        const name ="김미영"; //바깥쪽, 안쪽 변수 명이 같으면
+                              // {} 안쪽이 우선 순위가 높음
         console.log("if 중 : ", name);
     }
     console.log("if 후 : ", name);
 } // 함수 정의 끝
+
+// 자료형 확인
+
+function  typeCheck(){
+    // typeof 연산자 : 변수/값의 자료형을 확인하는 연산자
+    //  undefined : 정의되지 않음 == 변수에 값 대입 X
+    let undef;
+    console.log("undef : ", undef, typeof undef)
+
+    // string(문자열) : "", '' 형태로 작성된 리터럴(값)
+    const name="성기훈"
+    const phone='01012341234';
+
+    console.log("name :", name, typeof name );
+    console.log("phone :", phone, typeof phone );
+
+
+    // number(숫자) : 정수, 실수  형태의 리터럴
+    const age = 23;
+    const height = 192.3;
+    const sight = -4.5;
+
+    console.log("age : ", age, typeof age);
+    console.log("height : ", height, typeof height);
+    console.log("sight : ", sight, typeof sight);
+
+    //boolean(논리값) : true(참), false(거짓)
+
+    const bool1 = true;
+    const bool2 = false;
+
+    console.log("bool1 : " ,bool1, typeof bool1);
+    console.log("bool2 : " ,bool2, typeof bool2);
+
+
+    //object(객체) : 값을 여러 개 저장할 수 있는 형태
+
+    //1) 배열(arry) : 변수의 묶음, 묶인 변수에 
+    // 0 부터 1씩 증가하는 숫자를 부여(index)
+    const numbers = [11, 22, 33]; //배열 생성
+    //배열 전체 타입 검사 : object
+    console.log("numbers : ", numbers, typeof numbers);
+
+    // 배열 내 요소(저장된 값) 하나씩 꺼내기
+    console.log("numbers[0] : ", numbers[0], typeof[0]);
+    console.log("numbers[1] : ", numbers[1], typeof[1]);
+    console.log("numbers[2] : ", numbers[2], typeof[2]);
+
+
+    // 2) JS 객체  { k:v, k:v, k:v }
+    // k(key) == 값을 구분하는 이름(변수명과 비슷)
+    //v(Value) == 값 자체 (변수에 대입되는 값)
+
+    const user = { 
+        id : "user01",
+        pw : "pass01",
+        point : 13000
+    }
+    // js 객체 내 요소 하나씩 꺼내기
+
+    console.log("user['id'] " , user['id'], typeof user['id'] );
+    console.log("user['pw'] " , user['pw'], typeof user['pw'] );
+    console.log("user['point'] " , user['point'], typeof user['point'] );
+
+    console.log("user : ", user, typeof user); // object 타입
+
+    // 함수(function) : 함수도 변수에 대입 가능
+
+    //sumFn === 함수명
+    const sumFn = function(a, b){ 
+        return a + b;
+    }
+    console.log("sumFn : ", sumFn, typeof sumFn);
+
+    //sumFn 호출 -> () 내 값 전달 -> 계산결과 return -> consle 출력
+    console.log(sumFn(111, 987));
+    console.log(sumFn(1, 92));
+}
