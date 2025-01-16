@@ -123,7 +123,7 @@ recordBtn.addEventListener("click", () => {
  const li = document.createElement("li");
  li.innerText = display.innerText; // 현재 시간을 li 내용으로 추가
  recordContainer.append(li); //화면에 추가
-})
+}); 
 
 
 

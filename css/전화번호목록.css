@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    display: flex;
+    width: 600px;
+    margin: auto;
+}
+
+
+main > div:first-child{
+    flex-grow: 1;
+}
+main > div:last-child{
+    width: 200px;
+    flex-shrink: 0;
+}
+
+
+#container{
+    width: 500px;
+    margin: 500px auto;
+}
+
+#btn-pad{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border: 3px solid black;
+}
+
+.key{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    margin: 10px 0;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    background-size: cover;
+    background-position: center;
+}
+
+
+#numberDisplay{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 20px;
+}
+
+.controls{
+    display: flex;
+    flex-direction: column;
+}

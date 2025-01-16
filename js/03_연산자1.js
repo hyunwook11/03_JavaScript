@@ -170,7 +170,7 @@ function checkFn(){
     console.log("num확인 : ", num); // 103
 
     //문제
-    let a = 10;
+    let a = 10;b
     let b = 5;
     let c = ++a * b--;
     // 최종 a, b, c 의 값은?
